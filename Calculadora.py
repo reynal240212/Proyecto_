@@ -1,19 +1,25 @@
-# Solicitud de información
-Nombre_completo = input(f"Ingresa tu nombre completo: ")
+import streamlit as st
+
+# Título de la aplicación
+st.title('Calculadora de Promedio')
+
+# Ingresar nombre
+nombre_completo = st.text_input('Ingresa tu nombre completo:')
+
+# Ingresar calificaciones para 5 materias
+calificaciones = []
 materias = 5
-# Asignación de variables
-CONTADOR = 1
-sumatoria = 0
-# Ciclo
-while CONTADOR <= materias:
-  nombre_materia = input(f"Ingrese el nombre de la materia {CONTADOR}: ") # Pedir nombre de la materia
-  calificacion = float(input(f"Ingrese la calificación de {nombre_materia}: ")) # Pedir calificación de la materia
-# Sumatoria
-  sumatoria = sumatoria + calificacion
-# Aumentar el contador para cerrar el ciclo
-  CONTADOR = CONTADOR + 1
-# Cálculos
-Promedio = sumatoria / materias
-# Imprimir resultados
-print (f"Nombre: ", Nombre_completo)
-print (f"Promedio: ", Promedio)
+
+for i in range(materias):
+    calificacion = st.number_input(f'Ingrese la calificación de la materia {i+1}:', min_value=0.0, max_value=10.0, step=0.1)
+    calificaciones.append(calificacion)
+
+# Botón para calcular el promedio
+if st.button('Calcular Promedio'):
+    if nombre_completo and all(calificaciones):
+        promedio = sum(calificaciones) / materias
+        st.write(f'Nombre: {nombre_completo}')
+        st.write(f'Promedio: {promedio:.2f}')
+    else:
+        st.error('Por favor, completa todos los campos.')
+
