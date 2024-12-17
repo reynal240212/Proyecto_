@@ -4,51 +4,15 @@ import streamlit as st
 st.markdown("""
     <style>
         body {
-            background-color: #f0f8ff;  /* Fondo suave y relajante */
+            background-color: #f0f8ff;  /* Color de fondo */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         .stButton>button {
-            background-color: #4CAF50; /* Botón verde */
+            background-color: #008CBA;  /* Botón azul */
             color: white;
-            padding: 12px 24px;
-            font-size: 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        
         .stButton>button:hover {
-            background-color: #45a049; /* Cambio de color al pasar el ratón */
-            transform: scale(1.05); /* Efecto de expansión */
-        }
-        
-        .stButton>button:active {
-            background-color: #388E3C; /* Color al hacer clic */
-        }
-        
-        .stTextInput>div>div>input {
-            font-size: 18px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 2px solid #4CAF50; /* Borde verde */
-        }
-        
-        .stTextInput>div>div>input:focus {
-            border-color: #388E3C; /* Borde al hacer clic */
-        }
-        
-        .stMarkdown {
-            color: #333333;
-            font-size: 18px;
-        }
-
-        .stSuccess {
-            background-color: #e8f5e9;
-            border-left: 4px solid #388E3C;
-            color: #388E3C;
+            background-color: #006F87;  /* Color del botón al pasar el mouse */
         }
     </style>
 """, unsafe_allow_html=True)
